@@ -1,21 +1,26 @@
 # TO-DO: Complete the selection_sort() function below
 def selection_sort(arr):
     # loop through n-1 elements
+    #i variable indicates how many items were sorted
     for i in range(0, len(arr) - 1):
+        #to find the minimum value of the unsorted array
+        #assume that the first element is the lowest
         cur_index = i
         smallest_index = cur_index
         # TO-DO: find next smallest element
         # (hint, can do in 3 loc)
         # Your code here
 
-        #find smallest element in remaining unsorted array
-        #nested for loop
+        #nested for loop with x to traverse through the remaining elements
         for x in range( i+1, len(arr)):         #range (increments value of i variable, to length of array)
-            if arr [smallest_index] > arr[x]:   # if the 
-                smallest_index = x               #finds the minimum value index   
+            if arr [smallest_index] > arr[x]:   # update the smallest_index if the element at x in unsorted array is lower than it
+                smallest_index = x               #smallest_index now becomes x element, since it's value was smaller than it   
 
         # TO-DO: swap
         # Your code here
+
+        #after finding lowest item in the unsorted array, swap with the first unsorted item 
+        #order has been swapped 
         arr[i], arr[smallest_index] = arr[smallest_index], arr[i]
 
     return arr
