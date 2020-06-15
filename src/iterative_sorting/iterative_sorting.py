@@ -48,9 +48,9 @@ def bubble_sort(arr):
     while(is_swapped):
         is_swapped = False
         #go through the list as many times as there elements and number of iterations
-        #want the last pair of elements to be (n-2, n-1). Last i elements already in place
 
         #traverse through the array from starting index to n-i-1. i standing for index
+        #want the last pair of elements to be (n-2, n-1). Last i elements already in place
         for i in range(len(arr)- number_of_iterations - 1):
             if arr[i] > arr[i +1]:          #swap if element found is greater than the next element in the list
                 #swap
