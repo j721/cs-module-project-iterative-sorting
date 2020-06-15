@@ -13,15 +13,15 @@ def binary_search(arr, target):
 
     # Your code here
     low = 0
-    high = len(arr) -1
+    high = len(arr) -1          #length of array all the way to last element in index
 
-    while low <= high:
+    while low <= high:              #low less than or equal to high(i.e. length of the array)
         middle = (low+ high)//2
-        guess = arr[middle]     
-        if guess == target:
-            return middle
-        if guess > target:
+        guess = arr[middle]     #guess starts with search in the middle index
+        if guess == target:     #if target is actually the middle index then just return it
+            return middle       
+        if guess > target:      #if guess is larger than the target, then decrease guess by -1
             high = middle -1
         else:
-            low = middle +  1
-    return -1  # not found
+            low = middle +  1   # if guess is smaller than target, then increase by + 1
+    return -1  # not found     
