@@ -29,18 +29,36 @@ def selection_sort(arr):
 # TO-DO:  implement the Bubble Sort function below
 def bubble_sort(arr):
     # Your code here
+
+    #approach
+        #starting at the beginning of the array (index = 0), 
+        #compare the current element with the next element in the array
+        #if current element is greater than next element
+        #than swap them
+            #if current element is less than the next element, move onto the next element in the list
+        #repeat this loop through out the whole list once all elements have been swapped properly in order
+
+    #created Boolean
+    #want to stop passing through the list
+    #as soon as we have passed the list, without swapping any elements
     is_swapped = True
 
     number_of_iterations = 0
 
     while(is_swapped):
         is_swapped = False
+        #go through the list as many times as there elements and number of iterations
+        #want the last pair of elements to be (n-2, n-1). Last i elements already in place
+
+        #traverse through the array from starting index to n-i-1. i standing for index
         for i in range(len(arr)- number_of_iterations - 1):
-            if arr[i] > arr[i +1]:
+            if arr[i] > arr[i +1]:          #swap if element found is greater than the next element in the list
                 #swap
                 arr[i], arr[i +1]= arr[i +1], arr[i]
-                is_swapped = True
-        number_of_iterations +=1
+                is_swapped = True       #return True once swap has ocurred
+        number_of_iterations +=1        #number iterations +1, once gone through the list
+        #with each consecutive iteration we can look at one less element than before
+        #only need to look ath the first (n-i) + 1 elements
     return arr
 
 '''
