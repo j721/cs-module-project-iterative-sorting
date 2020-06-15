@@ -77,9 +77,27 @@ showed up, we can construct a sorted set of the input data from the
 buckets. 
 
 What is the time and space complexity of the counting sort algorithm?
+
+answer: time complexity is O (n+c)
+space complexity is O (n +c)
 '''
 def counting_sort(arr, maximum=None):
     # Your code here
+    #Count the number of times each value appears
+    #counts[0] stores the number of 0's in the input
+    #counts [4] stores the number of 4's in the input
+
+   
+    counts = [0] * (maximum +1)
+    
+    for i in arr:
+       counts[i] +=1
+    
+    output =[]
+    for element, count in enumerate(counts):
+        if count > 0:
+            for _ in range(0, count):
+                output.append(element)
 
 
     return arr
